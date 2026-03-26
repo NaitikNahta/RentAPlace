@@ -1,0 +1,99 @@
+.messages-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.messages-header h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.conversation {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 24px;
+  min-height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-sent {
+  align-self: flex-end;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px 12px 0 12px;
+  max-width: 60%;
+}
+
+.message-received {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 12px 12px 12px 0;
+  max-width: 60%;
+}
+
+.sender-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.message-content {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.message-time {
+  font-size: 11px;
+  opacity: 0.7;
+  text-align: right;
+}
+
+.message-input {
+  display: flex;
+  gap: 12px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.message-input button {
+  padding: 12px 24px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+  padding: 24px;
+  text-align: center;
+}
+
+.error-msg {
+  background-color: #ffe0e0;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}

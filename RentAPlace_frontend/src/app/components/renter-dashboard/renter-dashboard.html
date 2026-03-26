@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>My Dashboard</h1>
+    <button class="browse-btn" (click)="router.navigate(['/properties'])">Browse Properties</button>
+  </div>
+
+  <div class="success-msg" *ngIf="successMsg">{{ successMsg }}</div>
+  <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+  <h2>My Reservations</h2>
+
+  @if (reservations.length === 0) {
+    <p class="no-data">You have no reservations yet. <a routerLink="/properties">Browse properties</a></p>
+  }
+
+  <div class="reservations-list">
+    @for (reservation of reservations; track reservation.id) {
+      <div class="reservation-card">
+        <div class="reservation-info">
+          <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
+          <p><strong>Property ID:</strong> {{ reservation.propertyId }}</p>
+          <p><strong>Check-In:</strong> {{ reservation.checkInDate | date }}</p>
+          <p><strong>Check-Out:</strong> {{ reservation.checkOutDate | date }}</p>
+          <p><strong>Status:</strong>
+            <span [class]="'status-' + reservation.status.toLowerCase()">{{ reservation.status }}</span>
+          </p>
+        </div>
+        @if (reservation.status === 'Pending') {
+          <button class="cancel-btn" (click)="cancelReservation(reservation.id)">Cancel</button>
+        }
+      </div>
+    }
+  </div>
+</div>

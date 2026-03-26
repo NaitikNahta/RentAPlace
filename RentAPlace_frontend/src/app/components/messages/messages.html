@@ -1,0 +1,36 @@
+<div class="messages-container">
+  <div class="messages-header">
+    <h1>Messages</h1>
+  </div>
+
+  <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+  @if (!receiverId || !propertyId) {
+    <p class="no-data">No conversation selected. Go to a property and message the owner.</p>
+  }
+
+  @if (receiverId && propertyId) {
+    <div class="conversation">
+      @if (conversation.length === 0) {
+        <p class="no-data">No messages yet. Start the conversation!</p>
+      }
+      @for (msg of conversation; track msg.id) {
+        <div [class]="msg.sender === authService.getUserId() ? 'message-sent' : 'message-received'">
+          <p class="sender-name">{{ msg.sender }}</p>
+          <p class="message-content">{{ msg.content }}</p>
+          <p class="message-time">{{ msg.sentAt | date:'short' }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="message-input">
+      <input
+        type="text"
+        [(ngModel)]="newMessage"
+        placeholder="Type your message..."
+        (keyup.enter)="sendMessage()"
+      />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  }
+</div>

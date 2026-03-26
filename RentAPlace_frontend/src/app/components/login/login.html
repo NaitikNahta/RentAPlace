@@ -1,0 +1,27 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to RentAPlace</p>
+
+    <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+  <label>Password</label>
+  <div class="password-wrapper">
+    <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" placeholder="Enter your password" />
+    <span class="eye-icon" (click)="showPassword = !showPassword">
+      {{ showPassword ? '👁️' : '🙈' }}
+    </span>
+  </div>
+</div>
+
+    <button class="login-btn" (click)="onLogin()">Login</button>
+
+    <p class="register-link">Don't have an account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

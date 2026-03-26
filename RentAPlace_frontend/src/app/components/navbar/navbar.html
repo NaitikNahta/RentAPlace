@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <h2>RentAPlace</h2>
+
+  <div>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/properties">Properties</a>
+
+    <!-- NOT LOGGED IN -->
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/register">Register</a>
+
+    <!-- LOGGED IN -->
+    <a *ngIf="authService.isLoggedIn()" routerLink="/owner-dashboard">Dashboard</a>
+    <a *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</a>
+  </div>
+</nav>

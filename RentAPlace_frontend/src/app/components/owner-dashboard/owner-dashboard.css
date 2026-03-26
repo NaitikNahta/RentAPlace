@@ -1,0 +1,152 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  color: #333;
+  flex: 1;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tabs button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #eee;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tabs button.active {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.property-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+}
+
+.property-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.location, .type {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.price {
+  color: #ff5a5f;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edit-btn, .view-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn { background-color: #4a90e2; color: white; }
+.delete-btn { padding: 8px 14px; background-color: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.view-btn { background-color: #27ae60; color: white; }
+
+.edit-form input, .edit-form select, .edit-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.edit-form textarea { height: 80px; }
+
+.edit-actions { display: flex; gap: 8px; }
+.save-btn { padding: 8px 16px; background-color: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; }
+.cancel-btn { padding: 8px 16px; background-color: #888; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+.reservations-list { display: flex; flex-direction: column; gap: 16px; }
+
+.reservation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+}
+
+.reservation-card p { margin-bottom: 6px; color: #444; }
+
+.status-actions { display: flex; gap: 8px; margin-top: 12px; }
+.confirm-btn { padding: 8px 16px; background-color: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+.status-pending { color: #f39c12; font-weight: bold; }
+.status-confirmed { color: #27ae60; font-weight: bold; }
+.status-cancelled { color: #e74c3c; font-weight: bold; }
+
+.no-data { color: #888; font-style: italic; padding: 24px; }
+
+.success-msg { background-color: #e0ffe0; color: #006600; padding: 10px; border-radius: 6px; margin-bottom: 16px; }
+.error-msg { background-color: #ffe0e0; color: #cc0000; padding: 10px; border-radius: 6px; margin-bottom: 16px; }
+.message-btn {
+  padding: 6px 14px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.message-btn:hover {
+  background-color: #357abd;
+}
+

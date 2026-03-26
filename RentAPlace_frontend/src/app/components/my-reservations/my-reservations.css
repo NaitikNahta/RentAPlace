@@ -1,0 +1,78 @@
+.reservations-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.reservations-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.reservations-header h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.browse-btn {
+  padding: 10px 20px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reservation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.reservation-info p {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.status-pending { color: #f39c12; font-weight: bold; }
+.status-confirmed { color: #27ae60; font-weight: bold; }
+.status-cancelled { color: #e74c3c; font-weight: bold; }
+
+.no-data {
+  color: #888;
+  font-style: italic;
+  padding: 24px;
+}
+
+.no-data a {
+  color: #ff5a5f;
+  text-decoration: none;
+}
+
+.success-msg { background-color: #e0ffe0; color: #006600; padding: 10px; border-radius: 6px; margin-bottom: 16px; }
+.error-msg { background-color: #ffe0e0; color: #cc0000; padding: 10px; border-radius: 6px; margin-bottom: 16px; }

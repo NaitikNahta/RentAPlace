@@ -1,0 +1,39 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>Find Your Perfect Place</h1>
+    <p>Search from thousands of properties across the country</p>
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchLocation" placeholder="Where do you want to go?" />
+      <select [(ngModel)]="searchType">
+        <option value="">All Types</option>
+        <option value="flat">Flat</option>
+        <option value="villa">Villa</option>
+        <option value="house">House</option>
+      </select>
+      <button (click)="onSearch()">Search</button>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Top Rated Properties</h2>
+  <div class="property-grid">
+    @for (property of topRatedProperties; track property.id) {
+      <div class="property-card" (click)="router.navigate(['/properties', property.id])">
+        <div class="card-image">
+          @if (propertyImages[property.id]) {
+            <img [src]="propertyImages[property.id]" alt="{{ property.title }}" />
+          } @else {
+            <div class="no-image">No Image</div>
+          }
+        </div>
+        <div class="property-info">
+          <h3>{{ property.title }}</h3>
+          <p class="location">📍 {{ property.location }}</p>
+          <p class="price">₹{{ property.pricePerNight }} / night</p>
+          <p class="rating">⭐ {{ property.averageRating | number:'1.1-1' }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

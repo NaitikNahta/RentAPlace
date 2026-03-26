@@ -1,0 +1,53 @@
+<div class="form-container">
+
+  <h2>{{ isEditMode ? 'Edit Property' : 'Add Property' }}</h2>
+
+  <div class="form-grid">
+
+    <input [(ngModel)]="title" placeholder="Title" />
+
+    <input [(ngModel)]="location" placeholder="Location" />
+
+    <input [(ngModel)]="price" type="number" placeholder="Price" />
+
+    <select [(ngModel)]="type">
+      <option value="">Select Type</option>
+      <option value="flat">Flat</option>
+      <option value="villa">Villa</option>
+      <option value="house">House</option>
+    </select>
+
+    <textarea [(ngModel)]="description" placeholder="Description"></textarea>
+
+  </div>
+
+  <button class="submit-btn" (click)="onSubmit()">
+    {{ isEditMode ? 'Update Property' : 'Add Property' }}
+  </button>
+
+  <!-- 🔥 IMAGE PREVIEW -->
+  <div class="image-preview" *ngIf="images.length > 0">
+
+    <h3>Property Images</h3>
+
+    <div class="image-grid">
+      <div *ngFor="let img of images" class="image-box">
+
+        <img [src]="baseUrl + img.imageUrl" />
+
+        <button (click)="deleteImage(img.id)">❌</button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔥 UPLOAD -->
+  <div class="upload-section">
+    <input type="file" multiple (change)="onFileSelect($event)" />
+    <p *ngIf="images.length >= 3" class="limit-msg">
+      Max 3 images allowed
+    </p>
+  </div>
+
+</div>

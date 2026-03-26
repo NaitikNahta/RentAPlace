@@ -1,0 +1,47 @@
+<div class="property-list-container">
+  <div class="filters">
+    <input type="text" [(ngModel)]="location" placeholder="Location" />
+    <select [(ngModel)]="type">
+      <option value="">All Types</option>
+      <option value="flat">Flat</option>
+      <option value="villa">Villa</option>
+      <option value="house">House</option>
+    </select>
+    <input type="number" [(ngModel)]="minPrice" placeholder="Min Price" />
+    <input type="number" [(ngModel)]="maxPrice" placeholder="Max Price" />
+    <button (click)="onSearch()">Search</button>
+
+    <div class="view-toggle">
+      <button (click)="viewMode='card'" [class.active]="viewMode==='card'">Card</button>
+      <button (click)="viewMode='list'" [class.active]="viewMode==='list'">List</button>
+    </div>
+  </div>
+
+  @if (properties.length === 0) {
+    <div class="no-results">No properties found.</div>
+  }
+
+  <div [class]="viewMode === 'card' ? 'property-grid' : 'property-list'">
+    @for (property of properties; track property.id) {
+
+      <div class="property-card list-view" (click)="router.navigate(['/properties', property.id])">
+
+        <!-- 🔥 IMAGES -->
+        <div class="property-images" *ngIf="viewMode === 'list'">
+          <img *ngFor="let img of property.images?.slice(0,3)"
+               [src]="baseUrl + img.imageUrl" />
+        </div>
+
+        <!-- 🔥 DETAILS -->
+        <div class="property-info">
+          <h3>{{ property.title }}</h3>
+          <p class="location">📍 {{ property.location }}</p>
+          <p class="type">🏠 {{ property.propertyType }}</p>
+          <p class="price">₹{{ property.pricePerNight }} / night</p>
+        </div>
+
+      </div>
+
+    }
+  </div>
+</div>

@@ -1,0 +1,83 @@
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+textarea {
+  grid-column: span 2;
+  height: 100px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #e04f54;
+}
+
+/* 🔥 IMAGE SECTION */
+.image-preview {
+  margin-top: 30px;
+}
+
+.image-grid {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.image-box button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 🔥 UPLOAD */
+.upload-section {
+  margin-top: 20px;
+}
+
+.limit-msg {
+  color: red;
+  font-size: 14px;
+}

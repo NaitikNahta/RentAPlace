@@ -1,0 +1,273 @@
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.property-header h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.location, .type {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.price {
+  color: #ff5a5f;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.rating {
+  color: #f5a623;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.images-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.main-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.small-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.small-images img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.description {
+  margin-bottom: 32px;
+}
+
+.description h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.reservation-section, .review-section, .reviews-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.reservation-section h2, .review-section h2, .reviews-section h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.reserve-btn {
+  padding: 12px 28px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.reserve-btn:hover {
+  background-color: #e04f54;
+}
+
+.review-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.reviewer {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.stars {
+  color: #f5a623;
+  margin-bottom: 4px;
+}
+
+.comment {
+  color: #666;
+}
+
+.success-msg {
+  background-color: #e0ffe0;
+  color: #006600;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.error-msg {
+  background-color: #ffe0e0;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.no-images, .no-reviews {
+  color: #888;
+  font-style: italic;
+}
+.message-btn {
+  margin-top: 12px;
+  padding: 12px 28px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.message-btn:hover {
+  background-color: #357abd;
+}
+/* 🔥 Hover Zoom */
+.main-image,
+.small-images img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover,
+.small-images img:hover {
+  transform: scale(1.03);
+}
+
+/* 🔥 FULLSCREEN */
+.gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* IMAGE */
+.gallery-image {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* NAV */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav.left { left: 20px; }
+.nav.right { right: 20px; }
+
+/* COUNTER */
+.image-counter {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: white;
+  font-size: 16px;
+}
+/* 🔥 Smooth overlay fade */
+.gallery-overlay {
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* 🔥 Image zoom-in effect */
+.gallery-image {
+  animation: zoomIn 0.25s ease-out;
+}
+
+/* FADE */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ZOOM */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
