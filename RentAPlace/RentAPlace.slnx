@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../RentAPlace_Tests/RentAPlace_Tests.csproj" Id="bb06f8bc-85d7-4485-9ac4-b9fb1d6cd0e1" />
+  <Project Path="RentAPlace.csproj" />
+</Solution>
